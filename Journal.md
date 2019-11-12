@@ -7,3 +7,9 @@ We discussed the problem we need to solve, we got introduced to Hardware and Sof
 Nov 5
 -------
 To revisit for loop homework on arduino I was using programing blocks on tikercad. I needed to make same programs as I did in bash so I didn't explore any new options or better shortcuts to do the same taske. So as far as I can tell now, I don't see any advantage of one langugage over another.
+
+Nov 11
+------
+We crated traffic lights from arduino kit. I learned basics of programing arduino in modern C, its not hard to understand and I like functions functionality. Prgoraming in bash I repeated coding process for similar things to many times so fuctions are giving me option to have some basics library to make coding faster. I like this topic a lot because it combines some basic electro enginering with coding and when you code something you actually get phyisical touchable result, not just program running in you computer.
+![trafficlights](trafficlights.gif)
+**Fig 1.** First mini arduino project - traffic lights, getting familiar with arduino, getting familiar with concept of ports, learning some bascic coding
