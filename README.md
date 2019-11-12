@@ -12,10 +12,13 @@ We crated traffic lights from arduino kit. I learned basics of programing arduin
 
 Nov 13
 -------
-How to count from 0 to 15 in binary
+How to count from 0 to 15 in binary:
+0 0
+#1 1
+#2 10
 0 | 0
 1 | 1
-2 | 10
+#2 | 10
 3 | 11
 4 | 100
 5 | 101
