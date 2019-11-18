@@ -25,10 +25,6 @@ Development
 
 
 
-
-
-Evaluation
------------
 Nov 11
 --------
 We crated traffic lights from arduino kit. I learned basics of programing arduino in modern C, its not hard to understand and I like functions functionality. Prgoraming in bash I repeated coding process for similar things to many times so fuctions are giving me option to have some basics library to make coding faster. I like this topic a lot because it combines some basic electro enginering with coding and when you code something you actually get phyisical touchable result, not just program running in you computer.
@@ -109,8 +105,71 @@ void loop()
 
 **Fig 2.** Second mini project - we created Arduino based binary counter that counts from 1 to 15
 
+Nov 17
+----------
+Homework was to create program that will implement binary table with 3 inputs and 2 outputs. Circut we used for this homework was:
+
+![binarytable](binarytable.png)
+
+**Fig 3.** Homework binary table
+
+We came up with 2 solutions. One was converting binary numbers to decimal and checking values with if operation. Second was just creating 8 if sentances and defining inputs and outputs to match the table. I did the second one
+```c
+//This program will implement table given by teacher
 
 
+
+// Set variable names to ports on arduino
+int butA = 13;
+int butB = 12;
+int butC = 11;
+int out1 = 3;
+int out2 = 4;
+
+
+//define which ports are inputs and which are outputs
+void setup ()
+{
+  pinMode(butA, INPUT);
+  pinMode(butB, INPUT);
+  pinMode(butC, INPUT);
+  pinMode(out1, OUTPUT);
+  pinMode(out2, OUTPUT);
+}
+
+//turning lights on and off based on pressed buttons
+void loop()
+{
+  if (digitalRead(butA) == LOW && digitalRead(butB) == LOW && digitalRead(butC) == LOW){
+ 		digitalWrite(out1, HIGH);
+  		digitalWrite(out2, HIGH); }
+  else if (digitalRead(butA) == LOW && digitalRead(butB) == LOW && digitalRead(butC) == HIGH){
+ 		digitalWrite(out1, HIGH);
+  		digitalWrite(out2, HIGH); }
+  else if (digitalRead(butA) == LOW && digitalRead(butB) == HIGH && digitalRead(butC) == LOW){
+ 		digitalWrite(out1, HIGH);
+  		digitalWrite(out2, LOW); }
+  else if (digitalRead(butA) == LOW && digitalRead(butB) == HIGH && digitalRead(butC) == HIGH){
+ 		digitalWrite(out1, HIGH);
+  		digitalWrite(out2, LOW); }
+  else if (digitalRead(butA) == HIGH && digitalRead(butB) == LOW && digitalRead(butC) == LOW){
+ 		digitalWrite(out1, LOW);
+  		digitalWrite(out2, HIGH); }
+  else if (digitalRead(butA) == HIGH && digitalRead(butB) == LOW && digitalRead(butC) == HIGH){
+ 		digitalWrite(out1, HIGH);
+  		digitalWrite(out2, HIGH); }
+  else if (digitalRead(butA) == HIGH && digitalRead(butB) == HIGH && digitalRead(butC) == LOW){
+ 		digitalWrite(out1, HIGH);
+  		digitalWrite(out2, HIGH); }
+  else {
+ 		digitalWrite(out1, HIGH);
+  		digitalWrite(out2, HIGH); }
+}
+```
+This program work, but I would encounter problems if I had more inputs, which would result in very long if sentances.
+
+Evaluation
+-----------
 
 
 
