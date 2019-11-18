@@ -19,3 +19,7 @@ We crated binary counter from 1 to 15 with 4 lights. Before that we learned how 
 Nov 17
 --------
 Assigned homework was too easy or I understood it terribly wrong. I hope its the first thing.
+
+Nov 18
+-----
+We worked on logical gates. It simple to understand. I didn't have time to revisit weekend homework so I need to do that tomorrow to test if I really understand the topic.
