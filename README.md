@@ -168,6 +168,15 @@ void loop()
 ```
 This program work, but I would encounter problems if I had more inputs, which would result in very long if sentances.
 
+Nov 18
+--------
+
+![binarygates](gates.png)
+
+**Fig 4.** Types of binary gates, with tables of inputs and outputs [Source](#Resources)
+
+A logic gates are building blocks of digital circuts or in our case program using binary inputs and outputs. Logic gates have two inputs and one output and are based on Boolean algebra. At any given moment every output is at one of the two binary conditions: true or false - [Source](#Resources). 4 basic gates we explored today are represented in the table above. In terms of matematcial decimal operators, AND is representing + (addition) and OR is representing x (multyplication). 
+
 Evaluation
 -----------
 
@@ -178,4 +187,5 @@ Evaluation
 Resources
 ----------
 Stapel, Elizabeth. “Number Bases: Introduction & Binary Numbers.” Purplemath, https://www.purplemath.com/modules/numbbase.htm.
-
+**Fig 4.** Account Suspended, https://guidetofortnite.com/2-input-xor-truth-table.html.
+Account Suspended, https://guidetofortnite.com/2-input-xor-truth-table.html.
