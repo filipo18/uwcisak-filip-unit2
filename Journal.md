@@ -23,3 +23,7 @@ Assigned homework was too easy or I understood it terribly wrong. I hope its the
 Nov 18
 -----
 We worked on logical gates. It simple to understand. I didn't have time to revisit weekend homework so I need to do that tomorrow to test if I really understand the topic.
+
+Nov
+-----
+Contiued working on logical gates. 
