@@ -29,6 +29,7 @@ Nov 19
 Contiued working on logical gates. 
 To do list:
 1. Working on handout Dr. Ruben gave us
+I think I learned how to deal with logical operators. I worked on that already 3 years ago in math class in my old school and I remembered everything by now. New thing I learned is how to come up with equations. THe thing I knew from before is how to check equation outputs with truth table
 
 Nov 20
 -------
