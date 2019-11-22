@@ -14,7 +14,7 @@ We crated traffic lights from arduino kit. I learned basics of programing arduin
 
 Nov 13
 -------
-We crated binary counter from 1 to 15 with 4 lights. Before that we learned how we translate from binary to decimal and from decimal to binary. I already knew that from before
+We crated binary counter from 1 to 15 with 4 lights. Before that we learned how we translate from binary to decimal and from decimal to binary. I already knew that from before. I learned one more way to use modules.
 
 Nov 17
 --------
