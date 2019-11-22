@@ -128,62 +128,56 @@ Each letter at the top of the colums represents one segment of our counter
 
 Using logical gates presented earlier, we convertet table (Fig 5.) to set of equations. One equation for each letter. And created a code that will count based on buttons pressed.
 
-```.ino
-int A = __;
-int B = __;
-int C = __;
-int outA = __;
-int outB = __;
-int outC = __;
-int outD = __;
-int outE = __;
-int outF = __;
-int outG = __;
+```c
+int butA = 13;
+int butB = 12;
+int butC = 11;
+int ledA = 7;
+int ledB = 6;
+int ledC = 5;
+int ledD = 4;
+int ledE = 3;
+int ledF = 2;
+int ledG = 1;
 
 void setup()
 {
-  pinMode(A, INPUT);
-  pinMode(B, INPUT);
-  pinMode(C, INPUT);
-  pinMode(outA, OUTPUT);
-  pinMode(outB, OUTPUT);
-  pinMode(outC, OUTPUT);
-  pinMode(outD, OUTPUT);
-  pinMode(outE, OUTPUT);
-  pinMode(outF, OUTPUT);
-  pinMode(outG, OUTPUT);    
+  pinMode(butA, INPUT);
+  pinMode(butB, INPUT);
+  pinMode(butC, INPUT);
+  pinMode(ledA, OUTPUT);
+  pinMode(ledB, OUTPUT);
+  pinMode(ledC, OUTPUT);
+  pinMode(ledD, OUTPUT);
+  pinMode(ledE, OUTPUT);
+  pinMode(ledF, OUTPUT);
+  pinMode(ledG, OUTPUT);
 }
 
 void loop()
 {
-  // equation for LED A:
-  bool eqA = B || (!A && !C) || (A && C);
-  	digitalWrite(outA, HIGH);
-  
-  // equation for LED B:
-  bool eqB = (A && !B) || (A && !C) || (!B && !C);
-  	digitalWrite(outB, HIGH);
-  
-  // equation for LED C:
-  bool eqC = (!A && !C) || (B && !C);
-  	digitalWrite(outC, HIGH);
-  
-  // equation for LED D:
-  bool eqD = (!A && !C) || (!A && B) || (A && B && !C) || (A && !B && C);
-  	digitalWrite(outD, HIGH);
-  
-  // equation for LED E:
-  bool eqE = C || A || (!A && !B);
-  	digitalWrite(outE, HIGH);
-  
-  // equation for LED F:
-  bool eqF = !A || (B && C) || (A && !B && !C);
-  	digitalWrite(outF, HIGH);
-  
-  // equation for LED G:
-  bool eqG = (B && !C) || (A && !B) || (!A && B);
-  	digitalWrite(out G, HIGH);
-  ```
+  bool A = digitalRead(butA);
+  bool B = digitalRead(butB);
+  bool C = digitalRead(butC);
+
+  bool eqA = ( (!C) & (!A) ) | B | ( C & A );
+  bool eqB =  ( A & C ) | ( (!B) & (!C) );
+  bool eqC = ( (!C) & (!A) ) | ((!C) & B);
+  bool eqD = (!C & !A) | (!A & B) | (!C & B) | (A & !B & C);
+  bool eqE = C | (!A & !B) | A;
+  bool eqF = !B | ( !A & !C ) | ( A & C);
+  bool eqG = B | (A & !B);
+ 
+  digitalWrite(ledA, eqA);
+  digitalWrite(ledB, eqB);
+  digitalWrite(ledC, eqC);
+  digitalWrite(ledD, eqD);
+  digitalWrite(ledE, eqE);
+  digitalWrite(ledF, eqF);
+  digitalWrite(ledG, eqG);
+}
+
+```
   
   This is circut we used:
   
