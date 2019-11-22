@@ -43,7 +43,7 @@ Bash
 
 **Types of variables in Modern C**
 1. Boolean - can hold only two values, 0 or 1. It uses only 1 byte
-1. Float - has a decimal point which is stored as 4bytes. Its the biggest variable we can use in Modern C
+1. Float - varaible with decimal point
 1. Word - stores an unsigned number from 0 to 65,535
 1. Long - extened numberical variable -2,147,483,648 to 2,147,483,647
 1. Char - stores a single character as a value
@@ -82,117 +82,7 @@ How to count from 0 to 15 in binary:
 1. 1111
 
 Usign this we created arduino based circut with 4 differend colored LEDs, and programed it to count from 1 to 15 in [binary](#resources)  according to table above. 
-```c
-int A = 12;
-int B = 9;
-int C = 7;
-int D = 4;
-int i = 0;
-//We define our variables 
 
-void setup()
-{
-  pinMode(A, OUTPUT);
-  pinMode(B, OUTPUT);
-  pinMode(C, OUTPUT);
-  pinMode(D, OUTPUT);
-}
-
-void loop()
-{
-  for (i = 0; i <= 15; i += 1)
-  {
-    if (i%2 == 1)
-    {
-      digitalWrite (D, HIGH);
-    } 
-    if (i%4 > 1)
-    {
-      digitalWrite (C, HIGH);
-    }
-    if (i%8 > 3) 
-    {
-      digitalWrite (B, HIGH);
-    }
-    if (i%16 > 7)
-    {
-      digitalWrite (A, HIGH);
-    }
-    delay (300);
-    digitalWrite (D, LOW);
-    digitalWrite (C, LOW);
-    digitalWrite (B, LOW);
-    digitalWrite (A, LOW);
-    
-  }
-}  
-```
-
-![binarycounter](binarycouner.gif)
-
-**Fig 2.** Second mini project - we created Arduino based binary counter that counts from 1 to 15
-
-Nov 17
-----------
-Homework was to create program that will implement binary table with 3 inputs and 2 outputs. Circut we used for this homework was:
-
-![binarytable](binarytable.png)
-
-**Fig 3.** Homework binary table
-
-We came up with 2 solutions. One was converting binary numbers to decimal and checking values with if operation. Second was just creating 8 if sentances and defining inputs and outputs to match the table. I did the second one
-```c
-//This program will implement table given by teacher
-
-
-
-// Set variable names to ports on arduino
-int butA = 13;
-int butB = 12;
-int butC = 11;
-int out1 = 3;
-int out2 = 4;
-
-
-//define which ports are inputs and which are outputs
-void setup ()
-{
-  pinMode(butA, INPUT);
-  pinMode(butB, INPUT);
-  pinMode(butC, INPUT);
-  pinMode(out1, OUTPUT);
-  pinMode(out2, OUTPUT);
-}
-
-//turning lights on and off based on pressed buttons
-void loop()
-{
-  if (digitalRead(butA) == LOW && digitalRead(butB) == LOW && digitalRead(butC) == LOW){
- 		digitalWrite(out1, HIGH);
-  		digitalWrite(out2, HIGH); }
-  else if (digitalRead(butA) == LOW && digitalRead(butB) == LOW && digitalRead(butC) == HIGH){
- 		digitalWrite(out1, HIGH);
-  		digitalWrite(out2, HIGH); }
-  else if (digitalRead(butA) == LOW && digitalRead(butB) == HIGH && digitalRead(butC) == LOW){
- 		digitalWrite(out1, HIGH);
-  		digitalWrite(out2, LOW); }
-  else if (digitalRead(butA) == LOW && digitalRead(butB) == HIGH && digitalRead(butC) == HIGH){
- 		digitalWrite(out1, HIGH);
-  		digitalWrite(out2, LOW); }
-  else if (digitalRead(butA) == HIGH && digitalRead(butB) == LOW && digitalRead(butC) == LOW){
- 		digitalWrite(out1, LOW);
-  		digitalWrite(out2, HIGH); }
-  else if (digitalRead(butA) == HIGH && digitalRead(butB) == LOW && digitalRead(butC) == HIGH){
- 		digitalWrite(out1, HIGH);
-  		digitalWrite(out2, HIGH); }
-  else if (digitalRead(butA) == HIGH && digitalRead(butB) == HIGH && digitalRead(butC) == LOW){
- 		digitalWrite(out1, HIGH);
-  		digitalWrite(out2, HIGH); }
-  else {
- 		digitalWrite(out1, HIGH);
-  		digitalWrite(out2, HIGH); }
-}
-```
 This program work, but I would encounter problems if I had more inputs, which would result in very long if sentances.
 It also demonstartes how to use button to trigger lights. ```c   if (digitalRead(butA) == LOW && digitalRead(butB) == LOW && digitalRead(butC) == LOW){
  		digitalWrite(out1, HIGH);
