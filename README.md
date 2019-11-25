@@ -187,7 +187,7 @@ void loop()
 
 Nov 25
 --------
-Usability is according to Wikpedia [4](#Resources) is the ease of use and learnability of a human-made object such as a tool or device.
+Usability is according to Wikpedia [ [4] ](#Resources) is the ease of use and learnability of a human-made object such as a tool or device.
 
 
 Evaluation
@@ -199,7 +199,7 @@ Evaluation
 
 Resources
 ----------
-[1] Stapel, Elizabeth. “Number Bases: Introduction & Binary Numbers.” Purplemath, https://www.purplemath.com/modules/numbbase.htm.
-[2] **Fig 4.** Account Suspended, https://guidetofortnite.com/2-input-xor-truth-table.html.
-[3] Account Suspended, https://guidetofortnite.com/2-input-xor-truth-table.html.
-[4] “Usability.” Wikipedia, Wikimedia Foundation, 13 Nov. 2019, https://en.wikipedia.org/wiki/Usability.
+1. [1] Stapel, Elizabeth. “Number Bases: Introduction & Binary Numbers.” Purplemath, https://www.purplemath.com/modules/numbbase.htm.
+1. [2] **Fig 4.** Account Suspended, https://guidetofortnite.com/2-input-xor-truth-table.html.
+1. [3] Account Suspended, https://guidetofortnite.com/2-input-xor-truth-table.html.
+1. [4] “Usability.” Wikipedia, Wikimedia Foundation, 13 Nov. 2019, https://en.wikipedia.org/wiki/Usability.
