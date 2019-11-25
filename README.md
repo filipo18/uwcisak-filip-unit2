@@ -189,6 +189,8 @@ Nov 25
 --------
 Usability is according to Wikpedia [ [4] ](#Resources) is the ease of use and learnability of a human-made object such as a tool or device.
 
+Human-centered design **HCD** is based on Feedback and Discoverability. Accordning to Joe Posner everything should be intuative and easy to use. [ [5] ](#Resources)
+
 
 Evaluation
 -----------
@@ -203,3 +205,4 @@ Resources
 1. [2] **Fig 4.** Account Suspended, https://guidetofortnite.com/2-input-xor-truth-table.html.
 1. [3] Account Suspended, https://guidetofortnite.com/2-input-xor-truth-table.html.
 1. [4] “Usability.” Wikipedia, Wikimedia Foundation, 13 Nov. 2019, https://en.wikipedia.org/wiki/Usability.
+1. [5] Posner J, Mars R. " It's not you, bad doors are everywhere" 2016. Retrived (25 Nov 2019)
