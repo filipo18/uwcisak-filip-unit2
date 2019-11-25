@@ -185,6 +185,9 @@ void loop()
   
   **Fig 6.** Seven segment counter circut
 
+Nov 25
+--------
+Usability is according to Wikpedia [4](#Resources) is the ease of use and learnability of a human-made object such as a tool or device.
 
 
 Evaluation
@@ -196,6 +199,7 @@ Evaluation
 
 Resources
 ----------
-Stapel, Elizabeth. “Number Bases: Introduction & Binary Numbers.” Purplemath, https://www.purplemath.com/modules/numbbase.htm.
-**Fig 4.** Account Suspended, https://guidetofortnite.com/2-input-xor-truth-table.html.
-Account Suspended, https://guidetofortnite.com/2-input-xor-truth-table.html.
+[1] Stapel, Elizabeth. “Number Bases: Introduction & Binary Numbers.” Purplemath, https://www.purplemath.com/modules/numbbase.htm.
+[2] **Fig 4.** Account Suspended, https://guidetofortnite.com/2-input-xor-truth-table.html.
+[3] Account Suspended, https://guidetofortnite.com/2-input-xor-truth-table.html.
+[4] “Usability.” Wikipedia, Wikimedia Foundation, 13 Nov. 2019, https://en.wikipedia.org/wiki/Usability.
