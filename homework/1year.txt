@@ -1,0 +1,22 @@
+/*
+  this program will print out years from 1000 to
+  2019 with word year attached
+*/
+
+int i = 0;
+
+void setup()
+{
+  Serial.begin(9600);
+
+}
+
+void loop()
+{
+  // loop will reapeat itself and always increase i
+  // by 1 1019 times
+  for (i = 1000; i <= 2020; i += 1) {
+    Serial.print(i);
+    Serial.println("YEAR");
+  }
+ 

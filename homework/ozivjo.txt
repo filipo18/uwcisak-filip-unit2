@@ -1,0 +1,22 @@
+/*
+  this program will print greeting in my language
+  "zivjo" 1000 times
+*/
+
+int counter;
+
+void setup()
+{
+  Serial.begin(9600);
+
+}
+
+void loop()
+{
+  // This for loop will increase i from 0 to 1000 by
+  // 1
+  for (counter = 0; counter < 1000; ++counter) {
+    Serial.println("zivjo");
+  }
+  delay(10); // Delay a little bit to improve simulation performance
+}

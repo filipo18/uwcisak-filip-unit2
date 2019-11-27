@@ -1,0 +1,36 @@
+//Defining pins as variables
+int butA = 13;
+int butB = 12;
+int butC = 11;
+int ledA = 5;
+int ledB = 4;
+int ledC = 3;
+
+void setup()
+{
+  // Defining pins as inputs and output
+  pinMode(butA, INPUT);
+  pinMode(butB, INPUT);
+  pinMode(butC, INPUT);
+  pinMode(ledA, OUTPUT);
+  pinMode(ledB, OUTPUT);
+  pinMode(ledC, OUTPUT);
+  
+}
+int decimal;
+void loop()
+{
+//Defining button inputs as variables which we will use in equations
+  bool A = digitalRead(butA);
+  bool B = digitalRead(butB);
+  bool C = digitalRead(butC);
+//Eqaution for each light
+  bool eqA = ( (!C) & (!A) ) | B | ( C & A );
+  bool eqB =  ( A & C ) | ( (!B) & (!C) );
+  bool eqC = ( (!C) & (!A) ) | ((!C) & B));
+ 
+// Turn on or off light according to the equation
+  digitalWrite(ledA, eqA);
+  digitalWrite(ledB, eqB);
+  digitalWrite(ledC, eqC);
+}

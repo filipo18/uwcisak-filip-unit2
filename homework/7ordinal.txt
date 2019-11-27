@@ -1,0 +1,40 @@
+/*
+  his program prints the ordinal numbers from 1st
+  to 100th, with the proper ending (st, nd, th).
+  E.g: 1st, 2nd, 3rd, ...
+*/
+
+int i = 0;
+
+int end = 0;
+
+void setup()
+{
+  Serial.begin(9600);
+
+}
+
+void loop()
+{
+  for (i = 1; i <= 101; i += 1) {
+    end = (i % 10);
+    if (end == 1) {
+      Serial.print(i);
+      Serial.println("st");
+    } else {
+      if (end == 2) {
+        Serial.print(i);
+        Serial.println("nd");
+      } else {
+        if (end == 3) {
+          Serial.print(i);
+          Serial.println("rd");
+        } else {
+          Serial.print(i);
+          Serial.println("th");
+        }
+      }
+    }
+  }
+ 
+}
