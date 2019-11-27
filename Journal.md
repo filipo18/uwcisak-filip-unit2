@@ -42,3 +42,9 @@ Today's to do list was:
 1. Build mondel with Arduino
 
 I taught I learned how to use logical gates to create equations based on table of outputs we crated. We ran out of time at the end but we finished the code. When I tested the code I was constantly getting wrong outputs. It looks like we have wrong equations for each LED light, but I checked few equations quickly and they looked correct. Right now I don't know what the reason for the wrong outputs is, but I will double check today and try to fix the problem.
+
+Nov 25
+-------
+
+Nov 27
+------
