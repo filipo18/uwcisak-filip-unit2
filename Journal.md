@@ -45,6 +45,16 @@ I taught I learned how to use logical gates to create equations based on table o
 
 Nov 25
 -------
+We started working on real project, creating english input keyboard with 2 buttons
+To do list was:
+1. Brainsotrm different ideas
+1. Choose one
+1. Draw it out and put it into readme file under planing or development section
+1. Start research
+1. Start coding
+
+This lesson I learnd nothing. I had to much ideas but I was unable to focus. Research is actually harder than I though because I don't know exactly what to search for.
 
 Nov 27
 ------
+This class we contiuniued working on 2 button english keyboard. It was a bit more productive. I learned how to make matric 2D array and interruptions with arduino. I have to idas how to complete the task. I was able to finnsih one, the other one is a bit triciker I will work on that tomorrow and try to figgure it out.
