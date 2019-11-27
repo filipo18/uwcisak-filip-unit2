@@ -27,6 +27,14 @@ Design
 **Fig 7.** Fisrt proposed solution with just one line array and 2 buttons - Next and Select
 In this solution we use button A to select and button B to move to next letter. This method is easy to code but not so time efficient. This is code I used
 
+**Solution 2**
+In this solution I am considering 2 possible verisions of program.
+![Keyboard solution 2](keyboard2.png)
+
+**Fig 8.** This picutre in propsing two differend solutions. 
+1. First option is to move right and down with buttons and make selection just with waiting ceratin time period (1sec on the picture). 
+1. Second option is slower. Program cycles through colums first and when we press button, colum is selected and rows start cycling. When we press button for the second time letter is chosen.
+
 Development
 ------------
 
@@ -202,6 +210,7 @@ Two proposed solutions for english input with 2 buttons
 --------------------------------------------------------
 
 **Solution 1** 
+
 ![Keyboard solution 1](keyboard1.png)
 
 **Fig 7.** Fisrt proposed solution with just one line array and 2 buttons - Next and Select
