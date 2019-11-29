@@ -19,7 +19,7 @@ Planning
 
 Design
 -------
-## Two proposed solutions for english input with 2 buttons
+### Two proposed solutions for english input with 2 buttons
 
 **Solution 1** 
 ![Keyboard solution 1](keyboard1.png)
