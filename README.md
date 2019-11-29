@@ -29,7 +29,7 @@ In this solution we use button A to select and button B to move to next letter. 
 
 **Solution 2**
 In this solution I am considering 2 possible verisions of program.
-![Keyboard solution 2](keyboard 2.png)
+![Keyboard solution 2](keyboard2.png)
 
 **Fig 8.** This picutre in propsing two differend solutions. 
 1. First option is to move right and down with buttons and make selection just with waiting ceratin time period (1sec on the picture). 
