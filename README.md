@@ -272,7 +272,9 @@ void selected(){
  ```
  This program works, the only problem I am encountering is blinking of serial monitor. I will resolve that when we move to LCD display. 
 
-One of the key parts of this program are **interuptions**. Instead of checking if button is pressed every milisecond, we can leave arduino runing other procces and then interupt this procces with input on pin 2 or 3. After interuption arduino goes back to procces runed before interuption.
+First key part used in this program is **array**. We use it to define arguments we will be using in the program. Type of variable we define if we are putting letters in the array is ```c String ```. After name we define for array we add ```c [n]``` . In bracets we specifiy number of arguments in array. If we don't specifiy it, program coutns arguments instead of us. We separate arguments with coma, each argument needs to be market with ```c ' ' ``` if specified type of variable is ```c int ``` and we are using numbers. If specified type of variable is ```c String ``` and we are using letters and other signs, each argument needs to be marked with ```c " " ```. So syntax all together looks like this ```c String arrayexample [5] = {"a", "b", "c", "d", "e"}
+
+Second of the key parts of this program are **interuptions**. Instead of checking if button is pressed every milisecond, we can leave arduino runing other procces and then interupt this procces with input on pin 2 or 3. After interuption arduino goes back to procces runed before interuption.
 1. First step is to set up interuption ports ```c attachInterrupt(0, changeLetter, RISING); ``` , first element in the brackets can only be 0 or 1. 0 is port 2, 1 is port 3 and this are only 2 ports on which interuption can be installed. Second element is function which will interupt main proccess when button on port 2 rises. That is defined in third element.
 1. Second step is to write a function we want to interupt current process. Let's take our case as an exaple:
 ```.ino 
@@ -372,6 +374,18 @@ void selected(){
 ```
 From here on, I will try to code 2 differend solutions (option1 and option2). I will see which one works out better.
 
+To crate 2D array or matrix we use same syntax as for array, only difference is that we use ```c [row][col] ``` at instead of ```c [] ```. First bracket defines rows and second colums. Type of variable we are using is string. So put this all together and we get ```c String matrixexample[][] = {   } ```. Example how we can create 2D array of symbols used for our purposes below:
+```c
+String keyboard[row][col] = {
+  {"_", "DEL", "a", "s", "c", "w"},
+  {"SENT", "t", "n", "d", "g", "s"},
+  {"e", "i", "l", "p", "x", "z"},
+  {"o", "h", "f", "k", "1", "6"},
+  {"r", "m", "v", "0", "5", "9"},
+  {"u", "b", "z", "4", "8", " "},
+  {"y", "q", "3", "7", " "; " "},
+  ```
+  
 Evaluation
 -----------
 
