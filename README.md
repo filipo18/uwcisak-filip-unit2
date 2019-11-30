@@ -3,22 +3,21 @@ Comunicating app
 
 A morse - binary code comunicating app based on Arduino kits
 
-Contents
----------
+# Contents
+
   1. [Planning](#planning)
   1. [Design](#design)
   1. [Development](#development)
   1. [Evalution](#evaluation)
 
 
-Planning
------------
+# Planning
+
 **Definethe Problem:** 
 It is year 2050, planet exploration is a thing, however comunication is still a problem. NASA is trying to establish comunication between Earth, Moon, and Mars. Earth can send messeges only in morse code and Mars can recive messeges only in binary code. Moon is between Earth and Mars so station on moon can comunicate in both binary and morse code. So we need to come up with the solution that will enable station on earth to enter messege in english and send it in morse code and vice versa. Station on mars need to be able to recive a messege in binary and translate it to english and vice versa. Moon station is most complicated one. Station on moon needs to send and recive in binary and morse and be able to translate everything to englsih. NASA is allowing us to use 100W lights and buzzers. We are limited on using only 2 buttons. My grupe is working on moon station.
 
 **Solution proposed**
-We were given Arduino kits to work with. With that we are able to meet all the requirements (2 buttons, lights and buzzers). In clas we are learning modern C and this is default language to program arduinos, that is why we are going to use it for our project. We will build english keyboard (**look at figure ........ **) 
-
+We were given Arduino kits to work with. With that we are able to meet all the requirements (2 buttons, lights and buzzers). In clas we are learning modern C and this is default language to program arduinos, that is why we are going to use it for our project. Use of two buttons to meet the reqirements will be explained down bellow
 **Succes criteria for moon station**
 1. Messege from Earth can be recived in Morse and translated to english.
 1. Messege can be translated from English to morse and be sent back to Earth.
@@ -27,8 +26,34 @@ We were given Arduino kits to work with. With that we are able to meet all the r
 1. Messege can be recived from earth in Morse and be sent to Mars translated to binary.
 1. MEssege can be recived from Mars in binary and be sent to Earth translated to Morse.
 
-Design
--------
+# Design
+
+![System diagram](systemdiagram.png)
+
+**Fig. 1** System diagram 1.0
+
+System diagram in Fig.1 is outlining our product, but it is not final since there are still few unclear things in our requirements. 
+
+**Input**
+Requirements for input are most clear, but there is still one question? I am considering 2 differend implementations of two buttons (look at "Two proposed solutions for english input with 2 buttons"). We enter messege in english and translate it to binary or Morse. 
+
+But here is a problem we need to solve. If we use both buttons to enter english alphabet, how do we decide if we want to translate to bininary or to morse. To indicate which code is selected I would add more led lights. Depending on code selected according led light would turn on. 
+
+**Output** 
+Morse code was created as simples way to transfer messeges. We need one led ligh (we can also use 2), and we can send messege letter by letter using this table
+
+![Morse](morse.png)
+
+**Fig 2.** [Morse code table](#resources)
+
+To change letters into binary code, there is standardized table already in place. It is called ASCII table. (American Standard Code for Information Interchange)
+
+![ASCII](asciitable.png)
+
+**Fig 3.** [ASCII table](#resources) 
+
+To output messege according to this table we need 8 LED lights. If Morse needs 1 light and binary needs 8 lights, we will use 8 lights all together. Everything described above is for sending messeges
+
 ### Two proposed solutions for english input with 2 buttons
 
 **Solution 1** 
@@ -45,8 +70,8 @@ In this solution I am considering 2 possible verisions of program.
 1. First option is to move right and down with buttons and make selection just with waiting ceratin time period (1sec on the picture). 
 1. Second option is slower. Program cycles through colums first and when we press button, colum is selected and rows start cycling. When we press button for the second time letter is chosen.
 
-Development
-------------
+# Development
+
 
 **Bash and Modern C evaluation**
 
@@ -408,6 +433,8 @@ Evaluation
 
 Resources
 ----------
+1. [1] **Fig 3.** Vivah, Linda. “Learn How to Read Binary in 5 Minutes.” Medium, Medium, 22 June 2018, https://medium.com/@LindaVivah/learn-how-to-read-binary-in-5-minutes-dac1feb991e.
+1. [2] **Fig 2.** Åhlén, Johan. “Morse Code Translator, Decoder, Alphabet.” Boxentriq, https://www.boxentriq.com/code-breaking/morse-code.
 1. [1] Stapel, Elizabeth. “Number Bases: Introduction & Binary Numbers.” Purplemath, https://www.purplemath.com/modules/numbbase.htm.
 1. [2] **Fig 4.** Account Suspended, https://guidetofortnite.com/2-input-xor-truth-table.html.
 1. [3] Account Suspended, https://guidetofortnite.com/2-input-xor-truth-table.html.
