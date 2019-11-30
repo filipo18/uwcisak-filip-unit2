@@ -17,7 +17,8 @@ A morse - binary code comunicating app based on Arduino kits
 It is year 2050, planet exploration is a thing, however comunication is still a problem. NASA is trying to establish comunication between Earth, Moon, and Mars. Earth can send messeges only in morse code and Mars can recive messeges only in binary code. Moon is between Earth and Mars so station on moon can comunicate in both binary and morse code. So we need to come up with the solution that will enable station on earth to enter messege in english and send it in morse code and vice versa. Station on mars need to be able to recive a messege in binary and translate it to english and vice versa. Moon station is most complicated one. Station on moon needs to send and recive in binary and morse and be able to translate everything to englsih. NASA is allowing us to use 100W lights and buzzers. We are limited on using only 2 buttons. My grupe is working on moon station.
 
 **Solution proposed**
-We were given Arduino kits to work with. With that we are able to meet all the requirements (2 buttons, lights and buzzers). In clas we are learning modern C and this is default language to program arduinos, that is why we are going to use it for our project. Use of two buttons to meet the reqirements will be explained down bellow
+We were given Arduino kits to work with. With that we are able to meet all the requirements (2 buttons, lights and buzzers). In clas we are learning modern C and this is default language to program arduinos, that is why we are going to use it for our project. Use of two buttons to meet the reqirements will be explained down bellow.
+
 **Succes criteria for moon station**
 1. Messege from Earth can be recived in Morse and translated to english.
 1. Messege can be translated from English to morse and be sent back to Earth.
@@ -37,36 +38,38 @@ System diagram in Fig.1 is outlining our product, but it is not final since ther
 **Input**
 Requirements for input are most clear, but there is still one question? I am considering 2 differend implementations of two buttons (look at "Two proposed solutions for english input with 2 buttons"). We enter messege in english and translate it to binary or Morse. 
 
-But here is a problem we need to solve. If we use both buttons to enter english alphabet, how do we decide if we want to translate to bininary or to morse. To indicate which code is selected I would add more led lights. Depending on code selected according led light would turn on. 
+But here is a problem we need to solve. If we use both buttons to enter english alphabet, how do we decide if we want to translate to bininary or to morse. To indicate which code is selected I would add more led lights. Depending on code selected according led light would turn on. To switch between Morse and binary I would add one more button but that is not accorind to requirements.
 
 **Output** 
-Morse code was created as simples way to transfer messeges. We need one led ligh (we can also use 2), and we can send messege letter by letter using this table
+Morse code was created as simplest way to transfer messeges. We need one led ligh (we can also use 2), and we can send messege letter by letter using this table
 
 ![Morse](morse.png)
 
-**Fig 2.** [Morse code table](#resources)
+**Fig 2.** [Morse code table [2] ](#resources)
 
 To change letters into binary code, there is standardized table already in place. It is called ASCII table. (American Standard Code for Information Interchange)
 
 ![ASCII](asciitable.png)
 
-**Fig 3.** [ASCII table](#resources) 
+**Fig 3.** [ASCII table [1] ](#resources) 
 
-To output messege according to this table we need 8 LED lights. If Morse needs 1 light and binary needs 8 lights, we will use 8 lights all together. Everything described above is for sending messeges
+To output messege according to this table we need 8 LED lights. If Morse needs 1 light and binary needs 8 lights, we will use 8 lights all together. **Everything described above is for sending messeges**. Now first thing I would add here is one more button to switch between sending and reciving mode (not accoring to requirements). *Another problem I need to solve* If we want to have english output of recived messege we need to enter a messege first. We can enter morse code with 2 buttons, to enter binary code we would need 8 buttons. And when we recive code and enter it we still to show english messege to the user. For that we would need a display.
+
+There are a lot of unclear things about this project and its requirements, so I will contact NASA as soon as possible to sort these things out :)
 
 ### Two proposed solutions for english input with 2 buttons
 
 **Solution 1** 
 ![Keyboard solution 1](keyboard1.png)
 
-**Fig 7.** Fisrt proposed solution with just one line array and 2 buttons - Next and Select
+**Fig 4.** Fisrt proposed solution with just one line array and 2 buttons - Next and Select
 In this solution we use button A to select and button B to move to next letter. This method is easy to code but not so time efficient. This is code I used
 
 **Solution 2**
 In this solution I am considering 2 possible verisions of program.
 ![Keyboard solution 2](keyboard2.png)
 
-**Fig 8.** This picutre in propsing two differend solutions. 
+**Fig 5.** This picutre in propsing two differend solutions. 
 1. First option is to move right and down with buttons and make selection just with waiting ceratin time period (1sec on the picture). 
 1. Second option is slower. Program cycles through colums first and when we press button, colum is selected and rows start cycling. When we press button for the second time letter is chosen.
 
@@ -108,7 +111,7 @@ We crated traffic lights from arduino kit. I learned basics of programing arduin
 
 ![trafficlights](trafficlights.gif)
 
-**Fig 1.** First mini arduino project - traffic lights, getting familiar with arduino, getting familiar with concept of ports, learning some bascic coding
+**Fig 6.** First mini arduino project - traffic lights, getting familiar with arduino, getting familiar with concept of ports, learning some bascic coding
 
 Nov 13
 -------
@@ -131,7 +134,7 @@ How to count from 0 to 15 in binary:
 1. 1110
 1. 1111
 
-Usign this we created arduino based circut with 4 differend colored LEDs, and programed it to count from 1 to 15 in [binary](#resources)  according to table above. 
+Usign this we created arduino based circut with 4 differend colored LEDs, and programed it to count from 1 to 15 in [binary [3] ](#resources)  according to table above. 
 
 This program work, but I would encounter problems if I had more inputs, which would result in very long if sentances.
 It also demonstartes how to use button to trigger lights. ```c   if (digitalRead(butA) == LOW && digitalRead(butB) == LOW && digitalRead(butC) == LOW){
@@ -145,9 +148,9 @@ Nov 18
 
 ![binarygates](gates.png)
 
-**Fig 4.** Types of binary gates, with tables of inputs and outputs [Source](#Resources)
+**Fig 7.** Types of binary gates, with tables of inputs and outputs [Source [4] ](#Resources)
 
-A logic gates are building blocks of digital circuts or in our case program using binary inputs and outputs. Logic gates have two inputs and one output and are based on Boolean algebra. At any given moment every output is at one of the two binary conditions: true or false - [Source](#Resources). 4 basic gates we explored today are represented in the table above. In terms of matematcial decimal operators, AND is representing + (addition) and OR is representing x (multyplication). 
+A logic gates are building blocks of digital circuts or in our case program using binary inputs and outputs. Logic gates have two inputs and one output and are based on Boolean algebra. At any given moment every output is at one of the two binary conditions: true or false - [Source [5] ](#Resources). 4 basic gates we explored today are represented in the table above. In terms of matematcial decimal operators, AND is representing + (addition) and OR is representing x (multyplication). 
 In modern C OR is represented with ```c | ``` AND is represented with ```c & ``` NOT is represented with ```c ! ``` and XOR is represented with ```c ^ ```
 
 Code below shows how to implement this in program:
@@ -174,9 +177,9 @@ Each letter at the top of the colums represents one segment of our counter
 
 ![Sevensegmentcounter](segmentcouter.png)
 
-**Fig 5.** Seven segment counter
+**Fig 8.** Seven segment counter
 
-Using logical gates presented earlier, we convertet table (Fig 5.) to set of equations. One equation for each letter. And created a code that will count based on buttons pressed.
+Using logical gates presented earlier, we convertet table (Fig 8.) to set of equations. One equation for each letter. And created a code that will count based on buttons pressed.
 
 ```c
 // Defining variables as pins
@@ -236,13 +239,13 @@ void loop()
   
   ![Counter circut](sevensegmentcounterarduino.png)
   
-  **Fig 6.** Seven segment counter circut
+  **Fig 9.** Seven segment counter circut
 
 Nov 25
 --------
-Usability is according to Wikpedia [ [4] ](#Resources) is the ease of use and learnability of a human-made object such as a tool or device.
+Usability is according to Wikpedia [ [6] ](#Resources) is the ease of use and learnability of a human-made object such as a tool or device.
 
-Human-centered design **HCD** is based on Feedback and Discoverability. Accordning to Joe Posner everything should be intuative and easy to use. [ [5] ](#Resources).
+Human-centered design **HCD** is based on Feedback and Discoverability. Accordning to Joe Posner everything should be intuative and easy to use. [ [7] ](#Resources).
  
 Two proposed solutions for english input with 2 buttons
 --------------------------------------------------------
@@ -251,7 +254,7 @@ Two proposed solutions for english input with 2 buttons
 
 ![Keyboard solution 1](keyboard1.png)
 
-**Fig 7.** Fisrt proposed solution with just one line array and 2 buttons - Next and Select
+**Fig 10.** Fisrt proposed solution with just one line array and 2 buttons - Next and Select
 In this solution we use button A to select and button B to move to next letter. This method is easy to code but not so time efficient. This is code I used
 ```.ino
 //This program will allow user ener english
@@ -330,7 +333,7 @@ So when button on port 2 will rise, this function will be performed.
 In this solution I am considering 2 possible verisions of program.
 ![Keyboard solution 2](keyboard2.png)
 
-**Fig 8.** This picutre in propsing two differend solutions. 
+**Fig 11.** This picutre in propsing two differend solutions. 
 1. First option is to move right and down with buttons and make selection just with waiting ceratin time period (1sec on the picture). This was first plan, but I encounter some problmes coding it. Everything is compleatly based on interuptions, so I should figgure out where to add time check, to confirm selection. Also the problem I see with that is that serial monitor is blinking all the time due to looping our main functions.  I will try to solve it but I got another idea which I think its much easier to code. I will work on both and I will se which one works out better. Another imporant thing is to make keyboard vissible all the time. We could just add picture next to the syistem but if we can code it into program that is much better.
 
 1. Second option is slower. Program cycles through colums first and when we press button, colum is selected and rows start cycling. When we press button for the second time letter is chosen. I have idea how to code that, and we also solve blinking problem since we can make cycle interval and delay interval on the loop the same. Problem with showing whole matrix remains the same also in this solution.
@@ -435,8 +438,8 @@ Resources
 ----------
 1. [1] **Fig 3.** Vivah, Linda. “Learn How to Read Binary in 5 Minutes.” Medium, Medium, 22 June 2018, https://medium.com/@LindaVivah/learn-how-to-read-binary-in-5-minutes-dac1feb991e.
 1. [2] **Fig 2.** Åhlén, Johan. “Morse Code Translator, Decoder, Alphabet.” Boxentriq, https://www.boxentriq.com/code-breaking/morse-code.
-1. [1] Stapel, Elizabeth. “Number Bases: Introduction & Binary Numbers.” Purplemath, https://www.purplemath.com/modules/numbbase.htm.
-1. [2] **Fig 4.** Account Suspended, https://guidetofortnite.com/2-input-xor-truth-table.html.
-1. [3] Account Suspended, https://guidetofortnite.com/2-input-xor-truth-table.html.
-1. [4] “Usability.” Wikipedia, Wikimedia Foundation, 13 Nov. 2019, https://en.wikipedia.org/wiki/Usability.
-1. [5] Posner J, Mars R. " It's not you, bad doors are everywhere" 2016. Retrived (25 Nov 2019)
+1. [3] Stapel, Elizabeth. “Number Bases: Introduction & Binary Numbers.” Purplemath, https://www.purplemath.com/modules/numbbase.htm.
+1. [4] **Fig 7.** Account Suspended, https://guidetofortnite.com/2-input-xor-truth-table.html.
+1. [5] Account Suspended, https://guidetofortnite.com/2-input-xor-truth-table.html.
+1. [6] “Usability.” Wikipedia, Wikimedia Foundation, 13 Nov. 2019, https://en.wikipedia.org/wiki/Usability.
+1. [7] Posner J, Mars R. " It's not you, bad doors are everywhere" 2016. Retrived (25 Nov 2019)
