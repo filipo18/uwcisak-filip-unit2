@@ -13,9 +13,19 @@ Contents
 
 Planning
 -----------
-**Definethe Problem:** NASA is trying to establish comunication between Earth, Moon, and Mars. Fill the requirements for lanugages for each station. I am working on the moon. That means we are dealing with three languages. Because comunication needs to be simple and we need to be able to build the syistem with arduinos, we chose modern C as coding langugage, because we program arduinos in this language by default. We have 2 proposed solutions (expplain that till wednesday). **Ask where goes what for EXAMPLE 2 proposed solutions for keyboard is that plaing desing of development?**
+**Definethe Problem:** 
+It is year 2050, planet exploration is a thing, however comunication is still a problem. NASA is trying to establish comunication between Earth, Moon, and Mars. Earth can send messeges only in morse code and Mars can recive messeges only in binary code. Moon is between Earth and Mars so station on moon can comunicate in both binary and morse code. So we need to come up with the solution that will enable station on earth to enter messege in english and send it in morse code and vice versa. Station on mars need to be able to recive a messege in binary and translate it to english and vice versa. Moon station is most complicated one. Station on moon needs to send and recive in binary and morse and be able to translate everything to englsih. NASA is allowing us to use 100W lights and buzzers. We are limited on using only 2 buttons. My grupe is working on moon station.
 
-**Succes criteria**
+**Solution proposed**
+We were given Arduino kits to work with. With that we are able to meet all the requirements (2 buttons, lights and buzzers). In clas we are learning modern C and this is default language to program arduinos, that is why we are going to use it for our project. We will build english keyboard (**look at figure ........ **) 
+
+**Succes criteria for moon station**
+1. Messege from Earth can be recived in Morse and translated to english.
+1. Messege can be translated from English to morse and be sent back to Earth.
+1. Message can be translated from English to binary and be sent do Mars.
+1. Messege can be recived in binary from Mars and translated to English.
+1. Messege can be recived from earth in Morse and be sent to Mars translated to binary.
+1. MEssege can be recived from Mars in binary and be sent to Earth translated to Morse.
 
 Design
 -------
