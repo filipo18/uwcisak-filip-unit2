@@ -144,6 +144,7 @@ Each letter at the top of the colums represents one segment of our counter
 Using logical gates presented earlier, we convertet table (Fig 5.) to set of equations. One equation for each letter. And created a code that will count based on buttons pressed.
 
 ```c
+// Defining variables as pins
 int butA = 13;
 int butB = 12;
 int butC = 11;
@@ -155,6 +156,7 @@ int ledE = 3;
 int ledF = 2;
 int ledG = 1;
 
+// Defining pins as inputs ans outputs
 void setup()
 {
   pinMode(butA, INPUT);
@@ -170,6 +172,7 @@ void setup()
 }
 
 void loop()
+//Defining buttons as variables I will use in equations
 {
   bool A = digitalRead(butA);
   bool B = digitalRead(butB);
