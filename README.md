@@ -75,12 +75,16 @@ In this solution I am considering 2 possible verisions of program.
 1. Second option is slower. Program cycles through colums first and when we press button, colum is selected and rows start cycling. When we press button for the second time letter is chosen.
 
 ### Design stage 2.0
-All the questions from **Design stage 1.0** are now resolved. Here is **System diagram 2.0**
+After talking to NASA, all the questions from **Design stage 1.0** were resolved. Here is **System diagram 2.0**
 
 ![System diagram 2.0](systemdiagram2.png)
 
 **Fig 6.** System diagram 2.0
 
+As shown in fig 6, input method for our sytem will be simple. Just 2 buttons. One to move on next argument in the menu, and one to confirm our choice. Menu will be organized in 4 (or 6 if we have time) main functions. Eng - Bin, Eng - Morse, Bin - Eng, Morse - Eng. 
+If one of the first two options are selected, array of letters and numbers will shop up on LCD display. For now, we will use simple 1d array not matrix as metioned in design stage 1.0. User will enter the messege, program will convert it to chosen code and 100w light will transmit it. Because we don't need all the characters from ASCII table metntioned in Design stage 1.0, we will crate custm char to binary coverstaion table and implement it. By doing this we will reduce number of bits required to send one character.
+If thrid or forth option is selected, arduino will enter recive mode.  User will be be able to enter coded messege in chosen code. Messege will be converted to english and shown on LCD display.
+LED indicators are added to the system, to show user in which mode is now. Depending on function user will chose, one of four LEDs will turn on. 1 for Eng - Bin, 2 for Eng - Morse, 3 for Bin - Eng, 4 for Morse - Eng.
 
 
 # Development
