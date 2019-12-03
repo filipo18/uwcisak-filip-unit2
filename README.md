@@ -29,6 +29,7 @@ We were given Arduino kits to work with. With that we are able to meet all the r
 
 # Design
 
+### Design stage 1.0
 ![System diagram](systemdiagram.png)
 
 **Fig. 1** System diagram 1.0
@@ -72,6 +73,9 @@ In this solution I am considering 2 possible verisions of program.
 **Fig 5.** This picutre in propsing two differend solutions. 
 1. First option is to move right and down with buttons and make selection just with waiting ceratin time period (1sec on the picture). 
 1. Second option is slower. Program cycles through colums first and when we press button, colum is selected and rows start cycling. When we press button for the second time letter is chosen.
+
+### Design stage 2.0
+
 
 # Development
 
