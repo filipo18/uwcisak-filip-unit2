@@ -75,6 +75,12 @@ In this solution I am considering 2 possible verisions of program.
 1. Second option is slower. Program cycles through colums first and when we press button, colum is selected and rows start cycling. When we press button for the second time letter is chosen.
 
 ### Design stage 2.0
+All the questions from **Design stage 1.0** are now resolved. Here is **System diagram 2.0**
+
+![System diagram 2.0](systemdiagram2.png)
+
+**Fig 6.** System diagram 2.0
+
 
 
 # Development
@@ -109,15 +115,15 @@ Bash
 1. usnigned int stores values from 0 to 65,535.
 
 
-Nov 11
+Traffic lights
 --------
 We crated traffic lights from arduino kit. I learned basics of programing arduino in modern C, its not hard to understand and I like functions functionality. Prgoraming in bash I repeated coding process for similar things to many times so fuctions are giving me option to have some basics library to make coding faster. I like this topic a lot because it combines some basic electro enginering with coding and when you code something you actually get phyisical touchable result, not just program running in you computer.
 
 ![trafficlights](trafficlights.gif)
 
-**Fig 6.** First mini arduino project - traffic lights, getting familiar with arduino, getting familiar with concept of ports, learning some bascic coding
+**Fig 7.** First mini arduino project - traffic lights, getting familiar with arduino, getting familiar with concept of ports, learning some bascic coding
 
-Nov 13
+Counting in binary
 -------
 How to count from 0 to 15 in binary:
 
@@ -147,12 +153,12 @@ It also demonstartes how to use button to trigger lights. ```c   if (digitalRead
       ```
       
 
-Nov 18
+Logic binary gates
 --------
 
 ![binarygates](gates.png)
 
-**Fig 7.** Types of binary gates, with tables of inputs and outputs [Source [4] ](#Resources)
+**Fig 8.** Types of binary gates, with tables of inputs and outputs [Source [4] ](#Resources)
 
 A logic gates are building blocks of digital circuts or in our case program using binary inputs and outputs. Logic gates have two inputs and one output and are based on Boolean algebra. At any given moment every output is at one of the two binary conditions: true or false - [Source [5] ](#Resources). 4 basic gates we explored today are represented in the table above. In terms of matematcial decimal operators, AND is representing + (addition) and OR is representing x (multyplication). 
 In modern C OR is represented with ```c | ``` AND is represented with ```c & ``` NOT is represented with ```c ! ``` and XOR is represented with ```c ^ ```
@@ -162,7 +168,7 @@ Code below shows how to implement this in program:
   bool eqA = ( (!C) & (!A) ) | B | ( C & A );
  digitalWrite(ledA, eqA);
  ```
-Nov 20
+Segment counter
 -------
 We crated seven segment counter using 3 buttons. First step was to create a table of inputs and outputs:
 
@@ -181,7 +187,7 @@ Each letter at the top of the colums represents one segment of our counter
 
 ![Sevensegmentcounter](segmentcouter.png)
 
-**Fig 8.** Seven segment counter
+**Fig 9.** Seven segment counter
 
 Using logical gates presented earlier, we convertet table (Fig 8.) to set of equations. One equation for each letter. And created a code that will count based on buttons pressed.
 
@@ -243,9 +249,9 @@ void loop()
   
   ![Counter circut](sevensegmentcounterarduino.png)
   
-  **Fig 9.** Seven segment counter circut
+  **Fig 10.** Seven segment counter circut
 
-Nov 25
+Usability
 --------
 Usability is according to Wikpedia [ [6] ](#Resources) is the ease of use and learnability of a human-made object such as a tool or device.
 
@@ -258,7 +264,7 @@ Two proposed solutions for english input with 2 buttons
 
 ![Keyboard solution 1](keyboard1.png)
 
-**Fig 10.** Fisrt proposed solution with just one line array and 2 buttons - Next and Select
+**Fig 11.** Fisrt proposed solution with just one line array and 2 buttons - Next and Select
 In this solution we use button A to select and button B to move to next letter. This method is easy to code but not so time efficient. This is code I used
 ```.ino
 //This program will allow user ener english
@@ -337,7 +343,7 @@ So when button on port 2 will rise, this function will be performed.
 In this solution I am considering 2 possible verisions of program.
 ![Keyboard solution 2](keyboard2.png)
 
-**Fig 11.** This picutre in propsing two differend solutions. 
+**Fig 12.** This picutre in propsing two differend solutions. 
 1. First option is to move right and down with buttons and make selection just with waiting ceratin time period (1sec on the picture). This was first plan, but I encounter some problmes coding it. Everything is compleatly based on interuptions, so I should figgure out where to add time check, to confirm selection. Also the problem I see with that is that serial monitor is blinking all the time due to looping our main functions.  I will try to solve it but I got another idea which I think its much easier to code. I will work on both and I will se which one works out better. Another imporant thing is to make keyboard vissible all the time. We could just add picture next to the syistem but if we can code it into program that is much better.
 
 1. Second option is slower. Program cycles through colums first and when we press button, colum is selected and rows start cycling. When we press button for the second time letter is chosen. I have idea how to code that, and we also solve blinking problem since we can make cycle interval and delay interval on the loop the same. Problem with showing whole matrix remains the same also in this solution.
