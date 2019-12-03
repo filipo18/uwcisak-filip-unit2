@@ -58,3 +58,17 @@ This lesson I learnd nothing. I had to much ideas but I was unable to focus. Res
 Nov 27
 ------
 This class we contiuniued working on 2 button english keyboard. It was a bit more productive. I learned how to make matric 2D array and interruptions with arduino. I have to idas how to complete the task. I was able to finnsih one, the other one is a bit triciker I will work on that tomorrow and try to figgure it out.
+
+Nov 28
+-------
+I tried to finish 2d matrix keyboard, but I didn't succeeded. I will try to revisit that problem. For homework I finnished keyboard with normal array. This was a lot simpler and program is working properly.
+
+Dec 2
+------
+Today to do list in class was:
+1. Find LCD circut in thinkercad and add 2 buttons
+1. Build LCD circut with arduino kit
+1. Draw a flow diagram for englsih keyboard program uploaded to classroom
+1. Create letter to binary conversation table.
+
+
