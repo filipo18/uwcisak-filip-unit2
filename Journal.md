@@ -71,4 +71,6 @@ Today to do list in class was:
 1. Draw a flow diagram for englsih keyboard program uploaded to classroom
 1. Create letter to binary conversation table.
 
+Building circuit with arduino kit was not hard, it just took a lot of time. English keyboard program was basicly what we did for homework customized to be shown on LCD display insted on Serial.monitor. I didn't have time to crate conversation table. I will do that next time
+
 
