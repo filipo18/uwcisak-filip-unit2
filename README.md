@@ -534,7 +534,7 @@ void selected(){
 
 ```
 
-![flowenglishkeyboard](flowenglishkeyboard.png)
+![flowenglishkeyboard](flowenglishkeyboard.jpg)
 
 **Fig 15.** This is flow diagram for English keyboard
 
