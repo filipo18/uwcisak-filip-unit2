@@ -534,6 +534,9 @@ void selected(){
 
 ```
 
+![flowenglishkeyboard](flowenglishkeyboard.png)
+
+**Fig 15.** This is flow diagram for English keyboard
 
 
 Evaluation
