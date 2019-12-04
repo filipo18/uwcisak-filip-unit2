@@ -451,7 +451,7 @@ We builded arduino LCD circut. Sketch from Thinkercad and actual build shown bel
 
 **Fig 13.** Arduino LCD Circuit sketch from Thinkercad
 
-![LCD Arduino circuit](lcdarduino.png)
+![LCD Arduino circuit](lcdarduino.jpg)
 
 **Fig 14.** Arduino LCD circuit
 
