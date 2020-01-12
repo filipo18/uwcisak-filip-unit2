@@ -538,6 +538,24 @@ void selected(){
 
 **Fig 15.** This is flow diagram for English keyboard
 
+**Protocol:**
+
+We began by learning about protocols used in technology today, furthering our background information so we can create our own protocol to communicate effectively.
+
+**Table 5:**  Most used protocols today, their creators and their functions 
+
+| Name  | Creator | Summary |
+| :----: |:----:| :----:|
+| IP | Vint Cerf & Bob Kahn | Interface identification address in the network | 
+| FTP | Abhay Bhusan | Transfer files between client and server | 
+| SSH | Tatu Ylonen | Log into a remote machine and execute commands | 
+| SMTP | RFC821 | Send/recieve emails | 
+| Telnet | UCLA | Used on the internet or local area network |
+| POP3 | Mark Crispin | Used to send/receive emails and download emails | 
+| HTTP | Tim Berners-Lee | Used on worldwide web for anything clickable (hyperlinks, etc) | 
+| VPN | Gurdeep Singh-Pall  | Provides encrypted internet connections | 
+
+
 
 Evaluation
 -----------
