@@ -1,0 +1,19 @@
+//This program displays the cube of the number up to given an integer
+
+#include <stdio.h>
+
+//define variables
+int main(void) {
+  int num=0, cube=0;
+//ask user for an integer
+  printf("Please enter a number.\n");
+  scanf("%d", &num);
+
+  //With num++ we get right number of loop repetitions
+  num++
+  for (int i = 1; i < num; i++) {
+    cube=i*i*i;
+    printf("The cube is %d\n", cube);
+  }
+  return 0;
+}

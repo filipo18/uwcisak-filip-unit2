@@ -1,0 +1,22 @@
+// This program checks whether a triangle is equilateral, isosceles, or scalene.
+
+#include <stdio.h>
+
+int main(void) {
+  int s1=0, s2=0, s3=0;
+
+  printf("Please enter the side lengths of your triangle.\n");
+  scanf("%d %d %d", &s1, &s2, &s3);
+  if (s1 == s2 && s1 == s3) {
+    printf("Your triangle is an equilateral triangle.\n");
+  }
+  else if (s1 == s2 || s2 == s3 || s1 == s3) {
+    printf("Your triangle is a isosceles triangle.\n");
+  }
+  else if (s1 != s2 != s3) {
+    printf("Your triangle is a scalene triangle.\n");
+  }
+  return 0;
+}
+
+//This program has one problem, even if triangle doesn't exist program will still classify it as a equliteral, isosceles or scalene triangle

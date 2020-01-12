@@ -1,0 +1,24 @@
+//This program will read 10 numbers from keyboard and calculate sum and average
+
+#include <stdio.h>
+
+int main(void){
+  //Define variables
+    int num=0; 
+    int sum=0;
+    float avg=0;
+  // Ask user for numbers
+  for (int i=0; i<10;i++){
+    printf("Enter a number\n");
+    scanf("%d", &num);
+    //calculate adition
+    sum += num;
+
+  }
+  //calculate average
+  avg = sum / 10;
+  //show results
+  printf("The addition of the 10 numbers is %d", sum);
+  printf("The average of the 10 numbers is %f", avg);
+  return 0;
+}

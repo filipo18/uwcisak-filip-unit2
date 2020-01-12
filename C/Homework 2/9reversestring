@@ -1,0 +1,30 @@
+// This program reverses a string. 
+
+#include <stdio.h>
+//This functions enables us few functions to work with strings, in this case lenght of the tring
+#include <string.h>
+ 
+int main(void) {
+  //define variables
+
+   char string[100], reverse;
+   int length;
+
+   printf("Please input a string.\n");
+   scanf("%s", string);
+   length=strlen(string);
+   length--;
+    
+for (int i=0; i<length; i++) {
+      //Reverse equals to position of letter from first to last
+       reverse = string[i];
+       //First number is changed with last number
+       string[i] = string[length];
+       //last number is changed with first number
+       string[length] = reverse;
+       //We move procees from last number to number on left
+       length--;
+   }
+   //Print reversed string to the user
+   printf("The string reversed is %s.\n", string);
+}

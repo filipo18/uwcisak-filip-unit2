@@ -1,0 +1,28 @@
+//This program will determine in which quadrant the cordinate point lies
+#include <stdio.h>
+
+int main(void){
+
+int x=0;
+int y=0;
+
+printf("Enter x and y cordinates:\n");
+scanf("%d %d", &x, &y);
+
+if (x==0 || y==0 ){
+  printf("ERROR: Point is between quadrants, try again!\n");
+}
+else if (x < 0 && y > 0){
+  printf("Point is in second quadrant\n");
+}
+else if (x > 0 && y > 0){
+  printf("Point is in first quadrant\n");
+}
+else if (x > 0 && y < 0){
+  printf("Point is in fourth quadrant\n");
+}
+else if (x < 0 && y < 0){
+  printf("Point is in third quadrant\n");
+}
+   return 0;
+}

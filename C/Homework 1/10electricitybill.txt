@@ -1,0 +1,48 @@
+/This program will calculate and print electricity bill of a given customer
+
+#include <stdio.h>
+
+int main (void){
+  int customerid=0;
+  char name[100];
+  int unit=0;
+  float charge=0;
+  float amountcharge=0;
+  float surcharge=0;
+  float paid=0;
+
+  printf("Enter required data in this orded: Customer ID, Name, Unit consumed.\n");
+  scanf("%d %s %d",&customerid,name,&unit);
+  
+  if(unit < 166){
+    printf("ERROR: Amount is to small to pay!\n");
+  }
+  else{
+      if(unit < 200){
+        charge=1.2;
+      }
+      else if (unit < 400){
+        charge=1.5;
+      }
+      else if (unit < 600){
+        charge=1.8;
+      }
+      else if(unit > 600){
+        charge=2;
+      }
+  amountcharge = unit * charge;
+  paid=amountcharge;
+  if(amountcharge > 400){
+    paid = amountcharge * 1.15;
+    surcharge = paid - amountcharge;
+  }
+  printf("Customer ID: %d\n", customerid);
+  printf("Customer Name: %s\n", name);
+  printf("unit Consumed %d\n", unit);
+  printf("Amount Charges: %f\n", amountcharge);
+  printf("Surcharge Amount: %f\n", surcharge);
+  printf("Net Amount Paid by the Customer: %f\n", paid);
+
+  } 
+  return 0;
+} 

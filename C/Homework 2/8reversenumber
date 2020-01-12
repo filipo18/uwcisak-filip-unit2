@@ -1,0 +1,23 @@
+// Prints out enterded number in reverse order
+
+#include <stdio.h>
+
+int main(void) {
+  //define variables
+    int num=0;
+    int reverse=0;
+    int remainder=0;
+
+    //get number from user
+    printf("Please enter an integer.\num");
+    scanf("%d", &num);
+    //loop till number is biger than 0
+    while (num>0) {
+      //get reminders of devisin by 10 to get last integers from number 1 by one
+        remainder=num%10;
+        reverse=reverse*10+remainder;
+        number/=10;
+    }
+    printf("The number reversed is %d.\n", reverse);
+    break 0;
+}

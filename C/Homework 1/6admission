@@ -1,0 +1,27 @@
+//This program will determine if candidate if eligible of admission for a professional course
+#include <stdio.h>
+
+int main(void){
+
+int mat=0;
+int phy=0;
+int chem=0;
+int total=0;
+int matphy=0;
+
+printf("Enter your marks in order: Mat, Phy, Chem:\n");
+scanf("%d %d %d", &mat, &phy, &chem);
+
+total = mat + phy + chem;
+matphy = mat + phy;
+
+if(mat >= 65 && phy >= 55 && chem >= 50){
+  if(total >=180 || matphy >= 140){
+    printf("The candidate is eligible for admission!\n");
+  }
+}
+else{
+  printf("Candidate is not eligible for admission.\n");
+}
+   return 0;
+}

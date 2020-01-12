@@ -1,0 +1,28 @@
+//This program will display n terms of harmonic series and their sum
+
+#include <stdio.h>
+//that function is required to concect two strings, solution I had in mind from the beginging was differend but in C is adding numerical value to the string much more complicated than in modern c
+#include <string.h>
+
+//define variables
+int main(void){
+  int num=0;
+  int add = 0;
+  int sum=0;
+
+//get user to enter number of terms
+  printf("Enter number of terms to be added.\n");
+  scanf("%d", &num);
+
+//loop for number of terms times
+  for(int i=0; i<num+1; i++){
+    sum=sum+add;
+    printf("%d", add);
+    printf("+");
+    add=(add*10)+1;
+  }
+  //print result to user
+  printf("\n");
+  printf("The sum is %d\n", sum);
+  return 0;
+}

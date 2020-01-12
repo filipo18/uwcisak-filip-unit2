@@ -1,0 +1,18 @@
+// This progrma checks whether a triangle can be formed by the given value for the angles. 
+
+#include <stdio.h>
+
+int main(void) {
+  int a1=0, a2=0, a3=0, sum=0;
+
+  printf("Please enter the three angles of your triangle. \n");
+  scanf("%d %d %d", &a1, &a2, &a3);
+  sum=a1+a2+a3;
+  if (sum==180 && a1<=90 && a2<=90 && a3<=90 && a1!=0 && a2!=0 && a3!=0) {
+    printf("The triangle is valid.\n");
+  }
+  else {
+    printf("The triangle is not valid.\n");
+  }
+  return 0;
+}

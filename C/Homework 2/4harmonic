@@ -1,0 +1,27 @@
+//This program will display n terms of harmonic series and their sum
+
+#include <stdio.h>
+
+//define variables
+int main(void) {
+  float num=0;
+  double sum=0, dev=0;
+
+  printf("Please enter an integer.\n");
+  scanf("%f", &num);
+
+  
+  for (int i=1; i<num+1; i++) {
+    printf("1/%d",i);
+    printf("+\n"); 
+    dev = 1/i;
+    printf("dev is %lf\n", dev);
+    sum = sum + dev;
+  }
+  printf("\n");
+  printf("The sum of the harmonic terms up %f is %lf.\n", num, sum);
+
+  return 0;
+}
+
+//Looks like devision of 1 with anything in C always gives you back 0 I tried float and double variable type and its not working

@@ -1,0 +1,24 @@
+// This program prints the Pascal triangle with number of rows stated by the user
+#include <stdio.h>
+
+int main(void) {
+  int rows, space, i, j, num=1;
+  printf("How many rows you want\n");
+  scanf("%d", &rows);
+
+    //number of loop repetitions
+    for (i=0; i<rows; i++) {  
+        //number of spaces printed between numbres 
+        for (space=1; space<=rows-i; space++) 
+            printf("  ");
+        for (j=0; j<=i; j++) { 
+            // if j equals 0 or i reset num to 0 
+            if (j==0 || i==j)
+                num = 1;  
+            else
+                num=num*(i-j+1)/j;  
+                printf("%4d", num); // the 4 means the width of the letter is 4
+        }
+        printf("\n");
+    }
+}

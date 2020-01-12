@@ -1,0 +1,23 @@
+//This program calculates factorial of number given by user
+
+
+#include <stdio.h>
+
+int main(void) {
+  //define variables
+  int num=0, factorial=1;
+
+//Ask user to ener a number and read it
+  printf("Please enter an integer.\n");
+  scanf("%d", &num);
+
+  //num++ makes sure we get right number of loop repetitions
+  num++;
+  for (int i=1; i<num; i++) {
+    factorial=factorial*i;
+  }
+
+  //print result to the user
+  printf("The factorial is %d", factorial);
+  return 0;
+}

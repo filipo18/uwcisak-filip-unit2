@@ -1,0 +1,34 @@
+//This profram prints out all the perfect numbers in a given range
+
+#include <stdio.h>
+
+//define variables
+int main(void){
+  int check, first, last, n, i;
+  
+  //ask user to enter range
+  printf("Enter first number.\n");
+  scanf("%d", &first);
+  printf("enter last number\n");
+  scanf("%d", &last);
+ 
+ //loop between first and last number
+  for (n=first; n<=last; n++) {
+  //reset variables
+    i=1;
+    check = 0;
+    while(i<n){
+      //check divisibility
+      if(n%i==0)
+          //if divisible add to control variable
+           check=check+i;
+          i++;
+    }
+    //if control variable equals to n we found a perfect number
+    if (check == n) {
+      //print results to the user
+      printf("%d is a perfect number within the given range.\n", n);
+    }
+  }
+      return 0;
+}

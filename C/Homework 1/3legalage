@@ -1,0 +1,16 @@
+//This program will read the age of a candidate and determine wheather it is eligible for casting vote in Japan
+
+#include <stdio.h>
+int main(void){
+  int age=0;
+  
+  printf("Enter your age:\n");
+  scanf("%d", &age);
+  if (age > 19){
+    printf("Congratulations! You are eligible for casing your vote.");
+  }
+  else{
+    printf("You are not eligible for casing your vote.");
+  }
+  return 0;
+}

@@ -1,0 +1,21 @@
+//This program will choose bigest number out of 3 entered by user
+
+#include <stdio.h>
+int main(void){
+int number1=0;
+int number2=0;
+int number3=0;
+
+printf("Enter 3 numbers:\n");
+scanf("%d %d %d", &number1, &number2, &number3);
+
+if ( number1 > number2 && number1 > number3 )
+      printf("The first number is the largest.\n");
+   else if ( number2 > number1 && number2 > number3 )
+      printf("The second number is the largest.\n");
+   else if ( number3 > number1 && number3 > number2 )
+      printf("The third number is the largest.\n");
+   else   
+      printf("ERROR: Dont't repeat numbers. Every number must be different\n");
+   return 0;
+}
