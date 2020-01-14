@@ -77,4 +77,9 @@ Jan 12
 -------
 Because of my procrastinating I didn't do anything on Saturday so homework for the weekend + school work from week before that I missed fell on Sunday. I solved first 15 questions without problems. Last five were a bit hardeer. After 3 continous hours of coding I started loosing my focus and patience.  I love a good challange but at this point I just wanted to finnish so for questions 6 and 7 I used help from google. I couldn't find solution for 8th problem, because i was searching for solution in coding language so I ask other students for help and solution was purely mathematicalal and obvious. I was able to solve 9th problem because for one of my previsous solutions I already found include <string.h> (which I didn't used for that problem at the end). There is still 10th problem to solve but it was to much computer science for today so I will revisit it tomorrow.
 
+Jan 13
+----
+We worked on machine cycle - how RAM and CPU comiunicate
+THen we were finshing our porject
+
 
