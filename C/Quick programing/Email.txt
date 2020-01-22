@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+
+int main(void){
+int y=0;
+char firstname[]= "";
+char lastname[]="";
+ printf("Enter year, first name and last name:\n");
+ scanf("%d %s %s", &y, firstname, lastname);
+
+ printf("%d.%s.%s@uwcisak.jp", y, firstname, lastname);
+ return 0;
+
+}
