@@ -80,6 +80,19 @@ Because of my procrastinating I didn't do anything on Saturday so homework for t
 Jan 13
 ----
 We worked on machine cycle - how RAM and CPU comiunicate
-THen we were finshing our porject
+THen we were finshing our porject. We didn't do any coding, we just figure out solving steps to our problem
+
+Jan 15
+-------
+To finnish our programing project, we have 4 major objectives. Our groupe of 4 is split into 2. Each half needs to complete 2 of the objectives. Today we finished the first one in TinkerCad but then uploading it to arduino, it turns out that timer on arduino is compleatly different than in tinker cad. Timer differences are not even proportional. We try to solve that problem for quite some time, I just got super frustrated
+
+
+Jan 18
+-------
+We met in KAC to join my 1/4th to lingyes and tuans 1/4th together. We solved problemt quite quickly, later that day Tom finished coding 3/4 th part. So we had 3 forths of program working in tinkercad. We thought we are closed to finishing our project with extra time in class to work on our repositories. 
+
+Jan 20
+--------
+
 
 
