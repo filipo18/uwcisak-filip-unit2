@@ -891,6 +891,91 @@ void selected(){
     }
     
   ```
+  
+English text to binary code
+-----------------------------
+  
+![ENG to BIN](engtobinary.png)
+
+**Fig 17.** Flow diagram of eng to morse function (Source: Lingye)
+
+I was not working in this part of the program. Program is using function to translate english to binary. For output, we are using 2 lights. One is just control light. If control light is turned on you read from second light. If it's on you read 1 if it's off you read 0. If control light is off you don't read. Working parts of code that are resposible for that translation shown bellow (Source: Lingye and Tuan):
+˛˛˛c
+//If sent binary function is chosen do following:
+    }
+    else if(key == "SENT BINARY")
+    {
+      EtoB();
+      turnOnOff();
+      sentbin();
+      turnOnOff();
+      text="";
+}
+    
+    else{
+      text += key;
+    }
+    index = 0; //restart the index
+  }
+}
+
+void EtoB(){
+
+for(int i=0; i<text.length(); i++){
+
+   char myChar = text.charAt(i);
+ //Function to translate english to binary
+    for(int i=7; i>=0; i--){
+      bna = bitRead(myChar,i);
+      chch += bna; 
+    }
+}
+}
+
+  
+void sentbin(){
+    for(int x=0; x < chch.length(); x++){
+      char myChar1 = chch.charAt(x);
+      if(myChar1 == '0'){
+        digitalWrite(led1, LOW);
+        blink();
+        delay(500);
+      } else if(myChar1 == '1'){
+        digitalWrite(led1, HIGH);
+        blink();
+        delay(500);
+      } else {
+        turnOff();
+      }
+    }
+  }
+//Function resposible for blinking
+void blink(){
+  digitalWrite(led2, HIGH);
+  delay(500);
+  digitalWrite(led2, LOW);
+  delay(500);
+}
+
+//function resposible for turning lights on and off
+void turnOnOff(){
+ digitalWrite(led1, HIGH);
+ digitalWrite(led2, HIGH);
+ delay(500);
+ digitalWrite(led1, LOW);
+ digitalWrite(led2, LOW);
+ delay(500);
+}
+
+void turnOff(){
+ digitalWrite(led1, LOW);
+ digitalWrite(led2, LOW);
+ delay(500);
+}
+
+Morse to binary (Morse to english)
+-----------------
+
 
 
 Evaluation
