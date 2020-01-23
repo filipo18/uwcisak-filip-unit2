@@ -629,7 +629,8 @@ Everything descirbet above is summarised in this flow diagram:
 **Fig 16.** Flow diagram of eng to morse function
 
 As a result of flow diagram and planing presented above here is final working code:
-``c
+``.int
+
 // include the library code:
 #include <LiquidCrystal.h>
 int index = 0; 
@@ -885,7 +886,8 @@ void selected(){
       delay(off);
       
     }
-    ``
+    
+  ``
 
 
 Evaluation
