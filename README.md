@@ -588,14 +588,16 @@ So idea was to create case for every character in keyboard and then depending on
 Second part of the problem was how to send morse code with lights. Original protocl was made for use with simple printer so it's to fasr for our light system. We had 2 possible solutions.
 
 **Solution 1** One light time based solution. The protocol other groupe, that was working on morse, come up with was
-``A dot means you light the light for one second (light on)
+```
+A dot means you light the light for one second (light on)
 A dash is three seconds (light on) 
 Between parts of letter is one second (light off)
 Between letters is two second (light off)
 Between words is 4 seconds (light off)
 
 Indicate the beginning and end of a message it’ll flash five times (for half a second per flash) (light on)
-``
+
+```
 Advantages un disadvantages are presented bellow:
 
 | Pros  | Cons    |
@@ -629,7 +631,8 @@ Everything descirbet above is summarised in this flow diagram:
 **Fig 16.** Flow diagram of eng to morse function
 
 As a result of flow diagram and planing presented above here is final working code:
-``.int
+
+```c
 
 // include the library code:
 #include <LiquidCrystal.h>
@@ -887,7 +890,7 @@ void selected(){
       
     }
     
-  ``
+  ```
 
 
 Evaluation
