@@ -93,6 +93,23 @@ We met in KAC to join my 1/4th to lingyes and tuans 1/4th together. We solved pr
 
 Jan 20
 --------
+Today's to do list was:
+1. Warm up programing
+1. Continue working on our project
+Tuan finnished his program but suprise, we can't add everything together and make it work. We spent 1 hour on trying to debug our program. At the end we found which part is making us problems. It's is section with a lot cases adding binary numbers to a string. We all are getting frustrated, we just want to finnish a project and move on from arduino but we haven't even tested program on real arduino yet.
 
+Jan 21
+-------
+First class this day is ComSci. Fisrt time since I came to ISAK I'm late for class...whoopsie.
+Today's to do list was:
+1. Warm up programing
+1. Finnishin our project 
+1. Short demonstration
+
+We couldn't solve problem from yesterday so we decided that our demo will be just working 3/4 of the program. 1/4th that was left out will get seperate demo because we jsut can't get it to work with other part of the program. Another problem we already knew it existed, but we never tried to solve it was timer on arduino. It is not the same as on TinkerCad... in fact is not even proportional. As if we are not frustrated with arduino enaugh already. I was playing around with delays but it seems like I'm just barley chaning blinking intervals. After 40 minutes I kinda get it to work.
+
+Jan 22
+-------
+Today we had a debate on programers automating their work. Debate was really bad. From the start we opened debate with role play which is not debate. When we succsed to start debate, debate is short on arguments. Topic was not so controvertial so everyone actually agreed that everything really depends on the situation.
 
 
