@@ -982,7 +982,7 @@ Evaluation
 -----------
 **Evaluation succes crieria**
 
-![EVALUATION TABLE (evaluatio.jpg)
+![EVALUATION TABLE] (evaluatio.jpg)
 
 **Fig 18.** Evaluation table
 
