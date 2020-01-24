@@ -987,7 +987,10 @@ Evaluation
 
 **Fig 18.** Evaluation table
 
-<video src="sentmorse.mp4" width="320" height="200" controls preload></video>
+1. [Video 1](https://drive.google.com/open?id=1t6drf_LhwDHJ_7kWhGcIYvnmlZlNniQw)
+1. [Video 2](https://drive.google.com/open?id=1N0ppAdLT-Msuy6DMo38uvPxOd7if45Nq)
+1. [Video 3](https://drive.google.com/open?id=1foNOE6SuTGCrhmjI1fMeeStQO6ZQm0_F)
+1. [Video 4](https://drive.google.com/open?id=1ENVzTCtF7SSiuMqnQ1Ur1VM5aNTFTugc)
 
 ### Improvements
 1. First of all, add all the functions in one program and make it work as a whole. 
