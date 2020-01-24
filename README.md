@@ -892,7 +892,7 @@ void selected(){
     
   ```
   
-English text to binary code
+English text to binary code (Source: Lingye)
 -----------------------------
   
 ![ENG to BIN](engtobinary.png)
@@ -974,10 +974,566 @@ void turnOff(){
 }
 ```
 
-Morse to binary (Morse to english)
+Morse to binary (Source: Tom)
 -----------------
 
+![Morse to binary](morsetoeng.png)
 
+**Fig 18.** Morse to Binary flow diagram
+
+Plan for this program was just to create morse to english program and join it with english to binary code already provided by Lingye and Tuan. In that way we got Morse to Binary program shown on flow diagram above. Parts of code responsible for this function bellow:
+```c
+void setup() {
+  Serial.begin(9600);
+
+    else if(key== "MORSE TO BINARY"){
+      MtoB();
+    }
+    
+    else{
+      text += key;
+    }
+    index = 0; //restart the index
+  }
+}
+
+void EtoB(){
+
+for(int i=0; i<text.length(); i++){
+
+   char myChar = text.charAt(i);
+ 
+    for(int i=7; i>=0; i--){
+      bna = bitRead(myChar,i);
+      chch += bna; 
+    }
+}
+}
+
+  
+void sentbin(){
+    for(int x=0; x < chch.length(); x++){
+      char myChar1 = chch.charAt(x);
+      if(myChar1 == '0'){
+        digitalWrite(led1, LOW);
+        blink();
+        delay(500);
+      } else if(myChar1 == '1'){
+        digitalWrite(led1, HIGH);
+        blink();
+        delay(500);
+      } else {
+        turnOff();
+      }
+    }
+  }
+
+void blink(){
+  digitalWrite(led2, HIGH);
+  delay(500);
+  digitalWrite(led2, LOW);
+  delay(500);
+}
+
+void turnOnOff(){
+ digitalWrite(led1, HIGH);
+ digitalWrite(led2, HIGH);
+ delay(500);
+ digitalWrite(led1, LOW);
+ digitalWrite(led2, LOW);
+ delay(500);
+}
+
+void turnOff(){
+ digitalWrite(led1, LOW);
+ digitalWrite(led2, LOW);
+ delay(500);
+}
+
+
+  void MtoB() {
+    for(i=0; i<text.length(); i++) {
+      if((text[i+1]=='3') || ((i+1)==text.length())||(text[i+1]=='0')){
+        mess2+=text[i];
+        for(j=0; j<37; j++) {
+          if(morse[j]==mess2) {
+            mess3+=keyboardformorse[j];
+            break;
+          }
+        }
+        mess2="";
+        if (text[i+1]=='0'){
+          mess3+=' ';
+        }
+          i+=1; 
+        
+        }
+      else {
+      	mess2+=text[i];
+      }
+      
+    } 
+  text=mess3;
+  Serial.print(text);
+  EtoB();
+  turnOnOff();
+  sentbin();
+  turnOnOff();
+  text="";
+  mess3="";
+  }
+    
+    void blinkLight(int on, int off) {
+      digitalWrite(led1, HIGH);
+      delay(on);
+      digitalWrite(led1, LOW);
+      delay(off);
+      
+    }
+  ```
+  This code is working.
+  
+  Binary to english (Source: Tuan)
+  ------------------
+  
+![Binary to english](bintoeng.png)
+
+**Fig 19.** Binary to english flow diagram
+
+Idea behid this part of code presented above in flow diagram was same as with previous one. Create binary to english and join it with english to morse to get binary to morse. But we encountered some unforseen difilcuties adding this part of the code to others. So this is not complete program but it still allowes user to recive binary code and transmit it in morse. But instead of one step proces that is required for morse to binary program, here user needs to translate binary to engish fisrt and then enter english text into english to binary function. It is functional but it takes much more time. Instead of showing part of the final program as I did with others functions, here I will show functional sepetrate program resposible just for this, because we were not able to make program work with others. Here is the code:
+```c
+// include the library code:
+#include <LiquidCrystal.h>
+int index = 0; 
+// add all the letters and digits to the keyboard
+String keyboard[]={"BIN TO ENG","0", "1","", "DEL"};
+String text = "";
+char letter;
+int numOptions = 5;
+int led1 = 8;
+int led2 = 13;
+int i,j;
+byte bna;
+String chch = "";
+String text1="";
+String text2="";
+int z;
+
+
+// initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(12, 11, 7, 6, 5, 4);
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(led1, OUTPUT);
+  pinMode(led2, OUTPUT);
+  // set up the LCD's number of columns and rows:
+  lcd.begin(16, 2);
+  // Print a message to the LCD.
+  attachInterrupt(0, changeLetter, RISING);//button A in port 2
+  attachInterrupt(1, selected, RISING);//button B in port 3
+ 
+}
+
+void loop() {
+  // set the cursor to column 0, line 1
+  // (note: line 1 is the second row, since counting begins with 0):
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print(keyboard[index]);
+  lcd.setCursor(0, 1);
+  lcd.print(text);
+  delay(100);
+}
+
+//This function changes the letter in the keyboard
+void changeLetter(){
+  static unsigned long last_interrupt_time = 0;
+  unsigned long interrupt_time = millis();
+  if (interrupt_time - last_interrupt_time > 200)
+  {
+  
+    last_interrupt_time = interrupt_time;// If interrupts come faster than 200ms, assum
+    index++;
+      //check for the max row number
+    if(index==numOptions){
+      index=0; //loop back to first row
+    } 
+ }
+}
+
+//this function adds the letter to the text or send the msg
+void selected(){
+  static unsigned long last_interrupt_time = 0;
+  unsigned long interrupt_time = millis();
+  if (interrupt_time - last_interrupt_time > 200)
+  {
+  
+    last_interrupt_time = interrupt_time;// If interrupts come faster than 200ms, assum
+    
+    String key = keyboard[index];
+    if (key == "DEL")
+    {
+      int len = text.length();
+      text.remove(len-1);
+    }
+     else if(key == "BIN TO ENG"){
+    	bintoeng();
+    } else{
+      text += key;
+    }
+    index = 0; //restart the index
+  }
+}
+
+
+void blink(){
+  digitalWrite(led2, HIGH);
+  delay(500);
+  digitalWrite(led2, LOW);
+  delay(500);
+}
+
+void turnOnOff(){
+ digitalWrite(led1, HIGH);
+ digitalWrite(led2, HIGH);
+ delay(500);
+ digitalWrite(led1, LOW);
+ digitalWrite(led2, LOW);
+ delay(500);
+}
+
+void turnOff(){
+ digitalWrite(led1, LOW);
+ digitalWrite(led2, LOW);
+ delay(500);
+}
+
+
+    
+void blinkLight(int on, int off) {
+      digitalWrite(led1, HIGH);
+      delay(on);
+      digitalWrite(led1, LOW);
+      delay(off);
+      
+    }
+
+
+void bintoeng(){
+  for (int y = 0; y < text.length(); y++){
+    if(text.charAt(y) != ' '){
+      z++;
+      text2+=text.charAt(y);
+      if(z == 8){
+        check();
+      	text2="";
+        z=0;
+      }
+    } else {
+    	text2+= " ";
+    }
+  }
+ Serial.print(text1); 
+}
+
+void check(){
+    if (text2 == "01100001") {
+           text1=text1+"a";
+    } else if (text2 == "01100010") {
+           text1=text1+"b";
+    } else if (text2 == "01100011") {
+           text1=text1+"c";
+    } else if (text2 == "01100100") {
+           text1=text1+"d";
+    } else if (text2 == "01100101") {
+           text1=text1+"e";
+    } else if (text2 == "01100110") {
+           text1=text1+"f";
+    } else if (text2 == "01100111") {
+           text1=text1+"g";
+    } else if (text2 == "01101000") {
+           text1=text1+"h";
+    } else if (text2 == "01101001") {
+           text1=text1+"i";
+    } else if (text2 == "01101010") {
+           text1=text1+"j";
+    } else if (text2 == "01101011") {
+           text1=text1+"k";
+    } else if (text2 == "01101100") {
+           text1=text1+"l";
+    } else if (text2 == "01101101") {
+           text1=text1+"m";
+    } else if (text2 == "01101110") {
+           text1=text1+"n";
+    } else if (text2 == "01101111") {
+           text1=text1+"o";
+    } else if (text2 == "01110000") {
+           text1=text1+"p";
+    } else if (text2 == "01110001") {
+           text1=text1+"q";
+    } else if (text2 == "01110010") {
+           text1=text1+"r";
+    } else if (text2 == "01110011") {
+           text1=text1+"s";
+    } else if (text2 == "01110100") {
+           text1=text1+"t";
+    } else if (text2 == "01110101") {
+           text1=text1+"u";
+    } else if (text2 == "01110110") {
+           text1=text1+"v";
+    } else if (text2 == "01110111") {
+           text1=text1+"w";
+    } else if (text2 == "01111000") {
+           text1=text1+"x";
+    } else if (text2 == "01111001") {
+           text1=text1+"y";
+    } else if (text2 == "01111010") {
+           text1=text1+"z";
+    } 
+}
+```
+
+Final code
+------------
+Adding all the parts of code presented above + few modifications and we got final code:
+```c
+// include the library code:
+#include <LiquidCrystal.h>
+int index = 0; 
+// add all the letters and digits to the keyboard
+String keyboard[]={" ", "SENT BINARY","SENT MORSE", "MORSE TO BINARY", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0","a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "DEL"};
+String keyboardformorse = " abcdefghijklmnopqrstuvwxyz1234567890";
+String morse[]={"0","12", "2111", "2121", "211", "1", "1121", "221", "1111", "11", "1222", "212", "1211", "22", "21", "222", "1221", "2212", "121", "111", "2", "112", "1112", "122", "2112", "2122", "2211", "12222", "11222", "11122", "11112", "11111", "21111", "22111", "22211", "22221", "22222"};
+String text = "";
+char letter;
+int numOptions = 39;
+int led1 = 8;
+int led2 = 13;
+int i,j;
+byte bna;
+String chch = "";
+String mess = "";
+String mess2 = "";
+String mess3= "";
+
+// initialize the library with the numbers of the interface pins
+LiquidCrystal lcd(12, 11, 7, 6, 5, 4);
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(led1, OUTPUT);
+  pinMode(led2, OUTPUT);
+  // set up the LCD's number of columns and rows:
+  lcd.begin(16, 2);
+  // Print a message to the LCD.
+  attachInterrupt(0, changeLetter, RISING);//button A in port 2
+  attachInterrupt(1, selected, RISING);//button B in port 3
+ 
+}
+
+void loop() {
+  // set the cursor to column 0, line 1
+  // (note: line 1 is the second row, since counting begins with 0):
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print(keyboard[index]);
+  lcd.setCursor(0, 1);
+  lcd.print(text);
+  delay(100);
+}
+
+//This function changes the letter in the keyboard
+void changeLetter(){
+  static unsigned long last_interrupt_time = 0;
+  unsigned long interrupt_time = millis();
+  if (interrupt_time - last_interrupt_time > 200)
+  {
+  
+    last_interrupt_time = interrupt_time;// If interrupts come faster than 200ms, assum
+    index++;
+      //check for the max row number
+    if(index==numOptions){
+      index=0; //loop back to first row
+    } 
+ }
+}
+
+//this function adds the letter to the text or send the msg
+void selected(){
+  static unsigned long last_interrupt_time = 0;
+  unsigned long interrupt_time = millis();
+  if (interrupt_time - last_interrupt_time > 200)
+  {
+  
+    last_interrupt_time = interrupt_time;// If interrupts come faster than 200ms, assum
+    
+    String key = keyboard[index];
+    if (key == "DEL")
+    {
+      int len = text.length();
+      text.remove(len-1);
+    }
+    else if(key == "SENT BINARY")
+    {
+      EtoB();
+      turnOnOff();
+      sentbin();
+      turnOnOff();
+      text="";
+    } else if(key == "SENT MORSE"){
+    	sentmorse();
+    }
+    else if(key== "MORSE TO BINARY"){
+      MtoB();
+    }
+    
+    else{
+      text += key;
+    }
+    index = 0; //restart the index
+  }
+}
+
+void EtoB(){
+
+for(int i=0; i<text.length(); i++){
+
+   char myChar = text.charAt(i);
+ 
+    for(int i=7; i>=0; i--){
+      bna = bitRead(myChar,i);
+      chch += bna; 
+    }
+}
+}
+
+  
+void sentbin(){
+    for(int x=0; x < chch.length(); x++){
+      char myChar1 = chch.charAt(x);
+      if(myChar1 == '0'){
+        digitalWrite(led1, LOW);
+        blink();
+        delay(500);
+      } else if(myChar1 == '1'){
+        digitalWrite(led1, HIGH);
+        blink();
+        delay(500);
+      } else {
+        turnOff();
+      }
+    }
+  }
+
+void blink(){
+  digitalWrite(led2, HIGH);
+  delay(500);
+  digitalWrite(led2, LOW);
+  delay(500);
+}
+
+void turnOnOff(){
+ digitalWrite(led1, HIGH);
+ digitalWrite(led2, HIGH);
+ delay(500);
+ digitalWrite(led1, LOW);
+ digitalWrite(led2, LOW);
+ delay(500);
+}
+
+void turnOff(){
+ digitalWrite(led1, LOW);
+ digitalWrite(led2, LOW);
+ delay(500);
+}
+
+// Morse
+void sentmorse(){
+      for(i=0; i<text.length(); i++) {
+        for(j=0; j<37; j++) {
+          if(text[i]==keyboardformorse[j]){
+            mess+=morse[j];
+            break;
+          }
+        }
+         
+        mess+="3";
+      }
+       for(i=0; i<7; i++) {
+        blinkLight(300, 300);
+      }
+      for(i=0; i<mess.length(); i++) {
+        switch (mess[i]) {
+          case '0':
+          delay(3000);
+          break;
+          
+          case '1':
+          blinkLight(1000, 1000);
+          break;
+          
+          case '2':
+          blinkLight(3000, 1000);
+          break;
+          
+          case '3':
+          delay(1000);
+          break;
+        }
+      }
+      
+      for(i=0; i<7; i++) {
+        blinkLight(300, 300);
+      }
+          
+      text="";
+    }
+  void MtoB() {
+    for(i=0; i<text.length(); i++) {
+      if((text[i+1]=='3') || ((i+1)==text.length())||(text[i+1]=='0')){
+        mess2+=text[i];
+        for(j=0; j<37; j++) {
+          if(morse[j]==mess2) {
+            mess3+=keyboardformorse[j];
+            break;
+          }
+        }
+        mess2="";
+        if (text[i+1]=='0'){
+          mess3+=' ';
+        }
+          i+=1; 
+        
+        }
+      else {
+      	mess2+=text[i];
+      }
+      
+    } 
+  text=mess3;
+  Serial.print(text);
+  EtoB();
+  turnOnOff();
+  sentbin();
+  turnOnOff();
+  text="";
+  mess3="";
+  }
+    
+    void blinkLight(int on, int off) {
+      digitalWrite(led1, HIGH);
+      delay(on);
+      digitalWrite(led1, LOW);
+      delay(off);
+      
+    }
+ ```
+ Code is functional.
+ 
+ ## Manuals
+
+ You can find [manuals](https://github.com/filipo18/uwcisak-filip-unit2/blob/master/Manual.md) in another file on my repository.
 
 Evaluation
 -----------
@@ -985,7 +1541,7 @@ Evaluation
 
 ![EVALUATION TABLE](evaluatio.jpg)
 
-**Fig 18.** Evaluation table
+**Fig 20.** Evaluation table
 
 1. [Video 1](https://drive.google.com/open?id=1t6drf_LhwDHJ_7kWhGcIYvnmlZlNniQw)
 1. [Video 2](https://drive.google.com/open?id=1N0ppAdLT-Msuy6DMo38uvPxOd7if45Nq)
@@ -998,7 +1554,7 @@ Evaluation
 1. Trasnfering programs from TinkerCad to actual arudino meesed up our timings, thus timing of blinks is not as planed. If we had more time we would play around with delays a bit more to make it working perfect.
 1. Keyboard is slow to use. For example if you miss key you wanted to press... you need to press next button 42 times to get back to it again. We could improve it by making 2D array. Idea was brought up in planing process, but then slower alternative stayed in use because it was perfectly functional and much easier to code... just SLOW.
 1. Evaluation and testing should be done practicaly. We should try to transmit messege and anther group should try reciving it and vice versa
-1. 
+1. Transmiting messege with lights seems like not ideal solution, because is relatively hard to read. It would be much easier to read if we used paper, pen and electromagnet. Person reciving messege would just pull the paper, arudino would be activating electromagnet accordingly and we could se long and short blink/presses much clearer. Disadvantage of system like that, is that we would need wirde cocention between sending and reciving device. In conclusion - our product is simples way to comunicate wirelessly. It is hard to decipher code in real time, but if you take video of light and then play it back, it is possible to decypher message.
 
 
 Resources
