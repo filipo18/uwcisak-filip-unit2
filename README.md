@@ -900,7 +900,7 @@ English text to binary code
 **Fig 17.** Flow diagram of eng to morse function (Source: Lingye)
 
 I was not working in this part of the program. Program is using function to translate english to binary. For output, we are using 2 lights. One is just control light. If control light is turned on you read from second light. If it's on you read 1 if it's off you read 0. If control light is off you don't read. Working parts of code that are resposible for that translation shown bellow (Source: Lingye and Tuan):
-˛˛˛c
+```c
 //If sent binary function is chosen do following:
     }
     else if(key == "SENT BINARY")
@@ -972,6 +972,7 @@ void turnOff(){
  digitalWrite(led2, LOW);
  delay(500);
 }
+```
 
 Morse to binary (Morse to english)
 -----------------
@@ -982,7 +983,7 @@ Evaluation
 -----------
 **Evaluation succes crieria**
 
-![EVALUATION TABLE] (evaluatio.jpg)
+![EVALUATION TABLE](evaluatio.jpg)
 
 **Fig 18.** Evaluation table
 
