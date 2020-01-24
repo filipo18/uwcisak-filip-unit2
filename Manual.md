@@ -63,6 +63,8 @@ z	|122|	01111010|	Z	|090|	01011010
 1| ON|ON|1
 2| ON|OFF|0
 3 |OFF|OFF|Space
+
+
 You have 2 lights. Light A is blinking in 1 sec interval. You read when light A is on. If light A is off you don't read. If
 Light A and light B are both ON you read 1, if light A is on and B OFF you read 0
 
