@@ -616,7 +616,7 @@ Advantages and disadvantages of this system:
 | Need to watch instead of wait | Hard to differentiate between spaces | 
 | Immediately know what's happening | Hard to differentiate between messages |
 
-Considering both tables, the other group decided to do time based solution, so if we wanted to comunicate with them we needed to use same protocol. (in detail instrucitons above under **solution 1**.
+Considering both tables, the other group decided to do time based solution, so if we wanted to comunicate with them we needed to use same protocol (On the last day of class time to work on project, other group told me that they changed protocol on 2 lights but they didn't comunicated that to us). (in detail instrucitons above under **solution 1**) 
 
 Now we have string of ones, twos and zeroes. Implementing protocol in previsouly presented soltions would look like that:
 0. If zero comes up in string, we turn off light for 4 sec. That means space
@@ -980,9 +980,20 @@ Morse to binary (Morse to english)
 
 Evaluation
 -----------
+**Evaluation succes crieria**
+
+![EVALUATION TABLE (evaluatio.jpg)
+
+**Fig 18.** Evaluation table
 
 
-
+### Improvements
+1. First of all, add all the functions in one program and make it work as a whole. 
+1. Time based protocol for transmiting morse code with one light is hard to read. Two lights system is much easier to read so I would go for that one next time.
+1. Trasnfering programs from TinkerCad to actual arudino meesed up our timings, thus timing of blinks is not as planed. If we had more time we would play around with delays a bit more to make it working perfect.
+1. Keyboard is slow to use. For example if you miss key you wanted to press... you need to press next button 42 times to get back to it again. We could improve it by making 2D array. Idea was brought up in planing process, but then slower alternative stayed in use because it was perfectly functional and much easier to code... just SLOW.
+1. Evaluation and testing should be done practicaly. We should try to transmit messege and anther group should try reciving it and vice versa
+1. 
 
 
 Resources
