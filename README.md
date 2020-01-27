@@ -1,3 +1,11 @@
+## Feedback
+
+Great job overall Filip!!. You could improve by:
+
+1. When justifying the hardware/software it is a good idea to check the web page of the creator/developer and see what the benefits and features of the device of softare are, you can include that and add a citation MLA.
+1. Good job with the **development** section. You can include only small portions of code rather than the whole program. The idea is to show new concepts/techniques/algorithms that you have developed toward the completion of the success criteria. Remember we do not waht to "DRY: dont repeat yourself" with too much code.
+
+
 Comunicating app
 ====================
 
